@@ -6,12 +6,16 @@ var BlazingSun2Image;
 var BlazingSun3Image;
 var WhiteCloud1Image;
 var WhiteCloud2Image;
+var GrayCloud1Image;
+var GrayCloud2Image;
 var BoyImage;
 var MadBoy;
 
 
 var WhiteCloud1X = -100;
 var WhiteCloud2X = 600;
+var GrayCloud1X = -100;
+var GrayCloud2X = 600;
 
 
 function preload() {
@@ -21,6 +25,9 @@ function preload() {
 	BlazingSun3Image = loadImage("Images/BlazingSun3.png");
 	WhiteCloud1Image = loadImage("Images/WhiteCloud1.png");
 	WhiteCloud2Image = loadImage("Images/WhiteCloud2.png");
+	GrayCloud1Image = loadImage("Images/GrayCloud1.png");
+	GrayCloud2Image = loadImage("Images/GrayCloud2.png");
+
 	BoyImage = loadImage("Images/Boy.png");
 	MadBoy = loadImage("Images/MadBoy.png");
 }
@@ -30,7 +37,8 @@ function setup() {
 }
 
 function draw() {
-	image(BackgroundSImage, 40, 0);
+	if (currentScene)
+		image(BackgroundSImage, 40, 0);
 	var x = random(0, 5);
 	var i = random(0, 2);
 	var j = random(0, 8);
@@ -56,14 +64,7 @@ function draw() {
 
 	}
 	image(WhiteCloud2Image, WhiteCloud2X, 50);
-
-
-	if (mouseIsPressed) {
-		image(BoyImage, 230, 250);
-	} else {
-		image(MadBoy, 230, 250);
-	}
-	//bad Day
+	image(BoyImage, 230, 250);
 
 
 
